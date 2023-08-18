@@ -1,0 +1,3 @@
+Find the most recurring values and infer the two moods
+
+100 songs may not be enough to infer a person's tastes

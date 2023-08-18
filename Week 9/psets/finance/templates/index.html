@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wallet
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in stocks %}
+                    <tr>
+                        <td>{{ row["symbol"] }}</td>
+                        <td>{{ row["shares_owned"] }}</td>
+                        <td>{{ row["price"] }}</td>
+                        <td>{{ row["value"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot">
+                <tr>
+                    <td scope="row"><strong>Cash</strong></td>
+                    <td>{{ cash }}</td>
+                </tr>
+                <tr>
+                    <td scope="row"><strong>Grand Total</strong></td>
+                    <td>{{ grandtotal }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}

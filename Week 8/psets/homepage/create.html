@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!-- encoding -->
+        <meta charset="utf-8">
+
+        <!-- responsive tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- title -->
+        <title>Onigiri | Create</title>
+
+        <!-- link stylesheet -->
+        <link href="styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="create_form">
+            <div>
+                    <div class="create_input">
+                        <label>Choose the type of rice</label>
+                        <select id="rice" class="dropdown" onChange="update('rice')">
+                            <option value="" disabled selected hidden>select</option>
+                            <option value="white rice">White Rice</option>
+                            <option value="brown rice">Brown Rice</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="create_input">
+                        <label>Choose the filling</label>
+                        <select id="filling" class="dropdown" onChange="update('filling')">
+                            <option value="" disabled selected hidden>select</option>
+                            <option value="">None</option>
+                            <option value="tuna">Tuna</option>
+                            <option value="salmon">Salmon</option>
+                            <option value="avocado">Avocado</option>
+                            <option value="shrimps">Shrimps</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="create_input">
+                        <label>Choose the topping</label>
+                        <select id="topping" class="dropdown" onChange="update('topping')">
+                            <option value="" disabled selected hidden>select</option>
+                            <option value="">None</option>
+                            <option value="white sesame">White Sesame</option>
+                            <option value="black sesame">Black Sesame</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <button>Create</button>
+                    <script>
+
+                        let attribute_url = "window.location.href='https://www.google.com/search?q="
+                        function update(element) {
+                            // select the value of the dropdown
+                            let select = document.getElementById(element);
+                            let option = select.options[select.selectedIndex];
+
+                            attribute_url = attribute_url + option.value + '+';
+
+                            if (element === 'topping'){
+                            attribute_url = attribute_url + "onigiri+recipe';"
+                            document.querySelector('button').setAttribute('onclick', attribute_url);
+                            }
+                        }
+
+                    </script>
+            </div>
+        </div>
+        <footer class="footer">
+            <a href="index.html" class="footer_link">Home</a>
+            <a href="facts.html" class="footer_link">Facts</a>
+            <a href="history.html" class="footer_link">History</a>
+        </footer>
+    </body>
+
+</html>

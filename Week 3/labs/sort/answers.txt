@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Program performed better on already sorted list
+
+sort2 uses: Merge Sort
+
+How do you know?: No differences in performance between sorted and unsorted lists. Good performance overall.
+
+sort3 uses: Selection Sort
+
+How do you know?: No differences in performance between sorted and unsorted lists. Poor performance on bigger lists.

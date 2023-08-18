@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title%}
+    Stock Price
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <div>
+            {{ symbol }}
+        </div>
+        <div>
+            ${{ price }}
+        </div>
+    </div>
+{% endblock %}

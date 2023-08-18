@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            window.onload = function() {
+
+                //buttons
+                document.querySelector('#ans_1').onclick = function(){
+                    document.querySelector('#result_1').innerHTML = 'Incorrect';
+                    document.querySelector('#ans_1').style.backgroundColor = 'red';
+                }
+
+                document.querySelector('#ans_3').onclick = function(){
+                    document.querySelector('#result_1').innerHTML = 'Incorrect';
+                    document.querySelector('#ans_3').style.backgroundColor = 'red';
+                }
+
+                document.querySelector('#ans_2').onclick = function(){
+                    document.querySelector('#result_1').innerHTML = 'Correct!';
+                    document.querySelector('#ans_2').style.backgroundColor = 'green';
+                }
+
+                //free answer
+                document.querySelector('#ans_4').onclick = function() {
+                    let correct_answer = 'germany';
+                    let user_answer = document.querySelector('input').value.toLowerCase();
+
+                    if (user_answer === correct_answer) {
+                        document.querySelector('#result_2').innerHTML = 'Correct!';
+                        document.querySelector('#ans_4').style.backgroundColor = 'green';
+                    }
+                    else {
+                        document.querySelector('#result_2').innerHTML = 'Incorrect';
+                        document.querySelector('#ans_4').style.backgroundColor = 'red';
+                    }
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>An adult dog typically has how many teeth?</h3>
+                <button id="ans_1">38</button>
+                <button id="ans_2">42</button>
+                <button id="ans_3">44</button>
+                <p id="result_1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Which country started WWII?</h3>
+                <input type="text", placeholder="Answer">
+                <button id="ans_4">Check Answer</button>
+                <p id="result_2"></p>
+            </div>
+        </div>
+    </body>
+</html>
